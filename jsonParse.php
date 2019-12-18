@@ -7,18 +7,14 @@
 		$filtered = [];
 
 		foreach($data as $key => $val) {
-			$Practitioner = trim(name($val['name'], "Practitioner:", "- Email"));
-			$Address 	  = address($val['ClinicAddress']);
-			$Phone 		  = phone_number($val['Phone']);
-			$bname 		  = trim($val['business name']);
-			$emails 	  = trim(explode("mailto:", $val['emails'])[1]);
 
 			$filtered[] = array(
-				"Email"			=> $emails,
-				"BusinessTitle" => $bname,
-				"Phone" 		=> $Phone,
-				"Address" 		=> $Address,
-				"Practitioner"	=> $Practitioner
+				"Name"  => $val['Name'],
+				"Province" => $val['Province'],
+				"City" 	=> $val['City'],
+				"Postal Code"  => $val['Postal Code'],
+				"Registration"	=> $val['Registration'],
+				"Phone"	=> $val['Phone']
 			);
 		}
 
